@@ -81,10 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    MyHobbies
+                    Hello {{auth()->user()->name}}
                 </div>
 
                 <div class="links">
+                    <p>{{auth()->user()->email}}</p>
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
