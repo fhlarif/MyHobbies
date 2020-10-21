@@ -10,9 +10,10 @@
                 <div class="card-body">
                     <ul class="list-group">
                         @foreach ($hobbies as $hobby)
-                         <li class="list-group-item">{{ $hobby->name }}</li>   
+                         <li class="list-group-item">
+                            <a href="/hobby/{{ $hobby->id }}" title="show_details">{{ $hobby->name }}</a>
+                        </li>   
                         @endforeach
-
                     </ul>
                 </div>
             </div>
