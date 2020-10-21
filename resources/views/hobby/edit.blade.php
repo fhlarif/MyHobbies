@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <form action="/hobby/{{ $hobby->id }}" method="post">
                             @csrf
-                            @method('PUT')
+                            @method("PUT")
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control {{ $errors->has('name')? 'border-danger':'' }}" id="name" name="name" value="{{ $hobby->name ?? old('name') }}">
