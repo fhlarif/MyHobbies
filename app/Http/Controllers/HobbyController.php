@@ -15,7 +15,8 @@ class HobbyController extends Controller
     public function index()
     {   
         $hobbies=Hobby::all();
-        dd('index',$hobbies);
+       // dd($hobbies,view('hobby.index'));
+        return view('hobby.index')->with(['hobbies'=>$hobbies]);
     }
 
     /**
