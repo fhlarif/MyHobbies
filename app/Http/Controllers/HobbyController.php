@@ -85,7 +85,17 @@ class HobbyController extends Controller
      */
     public function update(Request $request, Hobby $hobby)
     {
-        //
+        $request->validate([
+            'name'=>'required|min:3',
+            'description'=>'required|min:5',
+        ]);
+        $hobby->update([
+            'name'=>$request->name,
+            'description'=>$request->description,
+        ]);
+        return $this->index()->with([
+            'message_success'=>"The hobby <b>".$hobby->name. "</b> was successfully updated.",
+        ]);
     }
 
     /**
