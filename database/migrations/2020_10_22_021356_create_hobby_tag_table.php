@@ -17,6 +17,9 @@ class CreateHobbyTagTable extends Migration
             $table->unsignedBigInteger('hobby_id')->nullable();
             $table->unsignedBigInteger('tag_id')->nullable();
             $table->timestamps();
+            $table->primary(['hobby_id','tag_id']);
+            $table->foreign('hobby_id')->references('id')->on('hobbies')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
