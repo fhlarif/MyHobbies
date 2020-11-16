@@ -15,7 +15,7 @@
                             @auth
                             <a href="/hobby/{{  $hobby->id }}/edit" class="btn btn-sm btn-light ml-2"><i class="fas fa-edit"></i> Edit Hobby</a>
                             @endauth
-                            <span class="mx-2">Posted by {{ $hobby->user->name }} ({{ $hobby->user->hobbies->count() }} Hobbies)</span>
+                            <span class="mx-2">Posted by <a href="/user/{{ $hobby->user->id }}"> {{ $hobby->user->name }}</a> ({{ $hobby->user->hobbies->count() }} Hobbies)</span>
                             @auth
                             <form action="/hobby/{{ $hobby->id }}" class="float-right" style="display: inline" method="POST">
                                 @csrf
